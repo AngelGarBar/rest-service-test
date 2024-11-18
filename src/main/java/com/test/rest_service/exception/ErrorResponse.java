@@ -1,4 +1,3 @@
-// src/main/java/com/test/rest_service/exception/ErrorResponse.java
 package com.test.rest_service.exception;
 
 import java.time.LocalDateTime;

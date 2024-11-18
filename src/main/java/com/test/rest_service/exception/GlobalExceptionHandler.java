@@ -1,4 +1,3 @@
-// src/main/java/com/test/rest_service/exception/GlobalExceptionHandler.java
 package com.test.rest_service.exception;
 
 import org.springframework.http.HttpStatus;
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
+    //Manejo de excepcion personalizado global
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex, WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(
