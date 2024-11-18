@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface PriceRepository extends JpaRepository<Price, Long> {
-    // Query para encontrar precios por  productId, brandId, and date range, ordenados por prioridad
     List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
             int productId, int brandId, LocalDateTime startDate, LocalDateTime endDate);
 }

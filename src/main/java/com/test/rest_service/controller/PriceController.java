@@ -13,15 +13,9 @@ import java.time.LocalDateTime;
 @RestController
 public class PriceController {
 
-    private final PriceService priceService;
-
-
     @Autowired
-    public PriceController(PriceService priceService) {
-        this.priceService = priceService;
-    }
+    private PriceService priceService;
 
-    // Endpoint para precio aplicable basado en applicationDate, productId y brandId
     @GetMapping("/price")
     public Price getPrice(
             @RequestParam("applicationDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate,

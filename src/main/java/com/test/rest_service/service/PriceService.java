@@ -11,15 +11,9 @@ import java.util.List;
 @Service
 public class PriceService {
 
-    private final PriceRepository priceRepository;
-
-
     @Autowired
-    public PriceService(PriceRepository priceRepository) {
-        this.priceRepository = priceRepository;
-    }
+    private PriceRepository priceRepository;
 
-    // Obtener el precio aplicable basado en productId, brandId y applicationDate
     public Price getApplicablePrice(int productId, int brandId, LocalDateTime applicationDate) {
         List<Price> prices = priceRepository.findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
                 productId, brandId, applicationDate, applicationDate);
